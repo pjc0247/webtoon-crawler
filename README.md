@@ -12,6 +12,20 @@ __stdout__으로 출력되는 정보
 { "counts" : "이미지_조각_수(숫자)" }
 ```
 
+인기급상승 랭킹 크롤링
+----
+```shell
+casperjs crawl_ranking.js
+```
+__stdout__으로 출력되는 정보
+```json
+{
+  "rank_favorite" : ['title1', 'title2', 'title3', 'title~10'],
+  "rank_update" : ['title1', 'title2', 'title3', 'title~10']
+}
+```
+* __rank_favorite__ : 인기 순 정렬
+* __rank_update__ : 업데이트 순 정렬
 
 ToDo
 ----
