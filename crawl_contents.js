@@ -15,7 +15,13 @@ casper.start(uri, function() {
     this.captureSelector(dst + i + '.png', id);
   }
 
+  var title = casper.evaluate(function(){
+    return document.querySelector('#content > div.section_spot > div.tit_area > div.view > h3')
+      .innerText
+  });
+
   var result = {
+     title : title,
 	 counts : i };
   console.log( JSON.stringify(result) );
 });
