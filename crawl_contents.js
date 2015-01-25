@@ -18,15 +18,21 @@ casper.start(uri, function() {
   var result = casper.evaluate(function(){
     var get_text = function(selector){
       return document.querySelector(selector).innerText;
-    };
-
+	};
+	
     return {
       title : get_text('#content > div.section_spot > div.tit_area > div.view > h3'),
       rating : get_text('#topPointTotalNumber > strong')
-      };
+      }
   });
-  
-  result["count"] = i;
+
+  if(result == null){
+    result = {};
+    result['code'] = 0;
+  } else{
+    result['count'] = i;
+    result['code'] = 1;
+  }
 
   console.log( JSON.stringify(result) );
 });
