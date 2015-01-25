@@ -15,14 +15,19 @@ casper.start(uri, function() {
     this.captureSelector(dst + i + '.png', id);
   }
 
-  var title = casper.evaluate(function(){
-    return document.querySelector('#content > div.section_spot > div.tit_area > div.view > h3')
-      .innerText
-  });
+  var result = casper.evaluate(function(){
+    var get_text = function(selector){
+      return document.querySelector(selector).innerText;
+	};
 
-  var result = {
-     title : title,
-	 counts : i };
+    return {
+      title : get_text('#content > div.section_spot > div.tit_area > div.view > h3'),
+      rating : get_text('#topPointTotalNumber > strong')
+      }
+  });
+  
+  result["count"] = i;
+
   console.log( JSON.stringify(result) );
 });
 
