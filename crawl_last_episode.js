@@ -15,6 +15,8 @@ casper.start(uri, function() {
 
     return {
       no : r.exec(link)[1],
+      title : get_text('#pageList > li:nth-child(1) > div > a > div > h4 > span.toon_name > strong > span'),
+      rating : get_text('#pageList > li:nth-child(1) > div > a > div > p > span.if1.st_r'),
       date : get_text('#pageList > li:nth-child(1) > div > a > div > p > span:nth-child(4)')
     }
   });
@@ -22,4 +24,4 @@ casper.start(uri, function() {
   console.log( JSON.stringify(result) );
 });
 
-casper.run();	
+casper.run();
