@@ -9,7 +9,10 @@ casperjs crawl_contents.js --id=웹툰아이디 --no=회수번호 --dst=대상�
 ```
 __stdout__으로 출력되는 정보
 ```json
-{ "counts" : "이미지_조각_수(숫자)" }
+{
+  "title" : "해당 화의 제목",
+  "counts" : "이미지_조각_수(숫자)"
+}
 ```
 
 인기급상승 랭킹 크롤링
@@ -26,6 +29,11 @@ __stdout__으로 출력되는 정보
 ```
 * __rank_favorite__ : 인기 순 정렬
 * __rank_update__ : 업데이트 순 정렬
+
+
+주의사항
+----
+* Windows CMD에서 실행 시 __chcp 65001__설정 후 사용
 
 ToDo
 ----
