@@ -20,8 +20,8 @@ casperjs crawl_ranking.js
 __stdout__으로 출력되는 정보
 ```json
 {
-  "rank_favorite" : ['title1', 'title2', 'title3', 'title~10'],
-  "rank_update" : ['title1', 'title2', 'title3', 'title~10']
+  "rank_favorite" : ["title1", "title2", "title3", "title~10"],
+  "rank_update" : ["title1", "title2", "title3", "title~10"]
 }
 ```
 * __rank_favorite__ : 인기 순 정렬
